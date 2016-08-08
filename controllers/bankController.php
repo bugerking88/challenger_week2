@@ -19,7 +19,9 @@ class bankController extends Controller {
     }
     function transfer_money(){//轉帳後跳轉
         $trans=$this->model("bankAccount");
-        $trans->trans();
+        $money=$_POST['send'];
+        $trans->trans($money);
+        header('Location: /bank_account/bank/bank_page');
         
     }
 }
