@@ -23,12 +23,12 @@
 			    		<h3 class="panel-title">轉帳</h3>
 			 			</div>
 			 			<div class="panel-body">
-			    		<form name="form" method="post" action="/bank_account/bank/bank_page">
+			    		<form name="form" method="post" action="/bank_account/bank/transfer_money">
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 				                		<lable>轉出轉入</lable>
-				                		<input type="text" name="send" id="send" class="form-control input-sm" placeholder="轉出填:-1">
+				                		<input type="text" name="send" id="send" class="form-control input-sm" placeholder="轉出填:-">
 			    					</div>
 			    				</div>
 			    			</div>

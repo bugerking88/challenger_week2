@@ -11,6 +11,9 @@ class bankAccount extends PDO_connect{
         $detail=$this->connect_getdata($sql);
 	    return $detail;
     }
+    function trans(){
+        
+    }
 }
 
 ?>
