@@ -28,13 +28,13 @@
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-				                		<lable><?php echo $data[0]['name'];?></lable>
+				                		<lable><?php echo $data[0][0]['name'];?></lable>
 				                		
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<lable>餘額</lable><lable><lable><?php echo $data[0]['balance'];?></lable></lable>
+			    						<lable>餘額</lable><lable><lable><?php echo $data[0][0]['balance'];?></lable></lable>
 			    					</div>
 			    				</div>
 			    			</div>
@@ -46,15 +46,14 @@
 			    	<div class="container">
 						<table class="table">
 					      <tr>
-					        <th>轉出</th>
-					        <th>轉入</th>
+					        <th>轉出入</th>
 					        <th>金額</th>
 					      </tr>
-					      	<?php for($i=0;$i<count($data);$i++){ ?>
+					      	<?php for($i=0;$i<count($data[1]);$i++){ ?>
 					      <tr>
-					        <th><?php echo $data[$i]['act_name']?></th>
-					        <th><?php echo $data[$i]['max_person']?></th>
-					        <th><?php echo $data[$i]['partner']?></th>
+					      	<?php $check=substr($data[1][$i]['trans_money'] , 0 , 1 );?>
+					      	<th><?php if($check=="-") echo "轉出"; else echo "轉入";?></th>
+					        <th><?php echo $data[1][$i]['trans_money']?></th>
 					      </tr>
 					        <?php } ?>
 					      </table>

@@ -2,8 +2,9 @@
 class bankController extends Controller {
     function bank_page(){
         $bank=$this->model("bankAccount");
-        $result=$bank->account();
-        $this->view("bankPage",$result);
+        $result1=$bank->account();
+        $result2=$this->showDetail();
+        $this->view("bankPage",Array($result1,$result2));
     }
     function moneyInOut(){
         
@@ -12,7 +13,9 @@ class bankController extends Controller {
         $this->view("changeAccount");
     }
     function showDetail(){
-        $this->view("changeAccount");
+        $detail=$this->model("bankAccount");
+        $result=$detail->detail();
+        return $result;
     }
 }
 
