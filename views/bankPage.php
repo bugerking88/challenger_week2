@@ -16,7 +16,7 @@
 	<body>
  <ul>
   <li><a class="active" href="/book_active/back/back_page">出入款</a></li>
-  <li><a class="bg-danger" href="/book_active/font/font_page">餘額和帳目明細</a></li>
+  <li><a class="bg-danger" href="/book_active/font/font_page">更換使用者</a></li>
 </ul>
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -29,12 +29,12 @@
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			                <input type="text" name="act_name" id="act_name" class="form-control input-sm" placeholder="活動名稱">
+				                		<lable>使用者A</lable>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="text" name="max_per" id="max_per" class="form-control input-sm" placeholder="人數限制">
+			    						<lable>餘額</lable><lable>100000</lable>
 			    					</div>
 			    				</div>
 			    			</div>
