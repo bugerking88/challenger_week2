@@ -11,6 +11,9 @@ class bankController extends Controller {
     function changeAccount(){
         $this->view("changeAccount");
     }
+    function showDetail(){
+        $this->view("changeAccount");
+    }
 }
 
 ?>

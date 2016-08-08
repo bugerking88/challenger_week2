@@ -28,12 +28,13 @@
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-				                		<lable>使用者A</lable>
+				                		<lable><?php echo $data[0]['name'];?></lable>
+				                		
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<lable>餘額</lable><lable>100000</lable>
+			    						<lable>餘額</lable><lable><lable><?php echo $data[0]['balance'];?></lable></lable>
 			    					</div>
 			    				</div>
 			    			</div>
