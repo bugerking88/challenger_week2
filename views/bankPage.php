@@ -15,8 +15,8 @@
 	</head>
 	<body>
  <ul>
-  <li><a class="active" href="/book_active/back/back_page">出入款</a></li>
-  <li><a class="bg-danger" href="/book_active/font/font_page">更換使用者</a></li>
+  <li><a class="active" href="/bank_account/bank/bank_page">餘額和帳目明細</a></li>
+  <li><a class="bg-danger" href="/bank_account/bank/changeAccount">更換使用者</a></li>
 </ul>
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -25,7 +25,7 @@
 			    		<h3 class="panel-title">餘額和帳目明細</h3>
 			 			</div>
 			 			<div class="panel-body">
-			    		<form name="form" method="post" action="/book_active/back/createActive">
+			    		<form name="form" method="post" action="/bank_account/bank/moneyInOut">
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
