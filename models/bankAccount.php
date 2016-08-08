@@ -14,13 +14,6 @@ class bankAccount extends PDO_connect
         $detail=$this->connect_getdata($sql);
 	    return $detail;
     }
-    // function trans($money)
-    // {//計算轉帳金額
-    //     $sql="UPDATE `member_Table` SET `balance`=`balance`+$money";
-    //     $this->connect_PDO($sql);
-    //     $sql="INSERT INTO `trans_detail` (`id`,`trans_money`) values('1','$money')";
-    //     $this->connect_PDO($sql);
-    // }
     function trans($money)
     {//計算轉帳金額
         $db=new PDO("mysql:host=localhost;dbname=bank_account;port=3306","root","");

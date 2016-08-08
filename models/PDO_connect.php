@@ -20,5 +20,3 @@ class PDO_connect
                 return $row;
         }
 }
-        
-?>

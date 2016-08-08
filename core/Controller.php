@@ -10,5 +10,3 @@ class Controller {
         require_once "../bank_account/views/$view.php";
     }
 }
-
-?>

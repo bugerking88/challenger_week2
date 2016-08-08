@@ -31,4 +31,3 @@ class bankController extends Controller
     }
 }
 
-?>
