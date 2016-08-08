@@ -1,13 +1,15 @@
 <?php
 class bankController extends Controller {
     function bank_page(){
-        $this->view("bankPage");
+        $bank=$this->model("bankAccount");
+        $result=$bank->account();
+        $this->view("bankPage",$result);
     }
     function moneyInOut(){
         
     }
     function changeAccount(){
-        
+        $this->view("changeAccount");
     }
 }
 
