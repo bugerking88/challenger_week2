@@ -22,7 +22,6 @@ class bankController extends Controller {
         $money=$_POST['send'];
         $trans->trans($money);
         header('Location: /bank_account/bank/bank_page');
-        
     }
 }
 
