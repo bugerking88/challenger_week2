@@ -7,7 +7,7 @@ class bankController extends Controller {
         $this->view("bankPage",Array($result1,$result2));
     }
     function moneyInOut(){
-        
+        $this->view("moneyInOut");
     }
     function changeAccount(){
         $this->view("changeAccount");
