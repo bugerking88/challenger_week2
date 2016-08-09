@@ -1,9 +1,9 @@
 <?php
-class bankController extends Controller
+class BankController extends Controller
 {
-    function bank_page()
+    function bankPage()
     {//帳戶頁面
-        $bank=$this->model("bankAccount");
+        $bank=$this->model("BankAccount");
         $result1=$bank->account();
         $result2=$this->showDetail();
         $this->view("bankPage",Array($result1,$result2));
@@ -18,16 +18,16 @@ class bankController extends Controller
     }
     function showDetail()
     {//顯示轉入出明細
-        $detail=$this->model("bankAccount");
+        $detail=$this->model("BankAccount");
         $result=$detail->detail();
         return $result;
     }
-    function transfer_money()
+    function transferMoney()
     {//轉帳後跳轉
-        $trans=$this->model("bankAccount");
+        $trans=$this->model("BankAccount");
         $money=$_POST['send'];
         $trans->trans($money);
-        header('Location: /bank_account/bank/bank_page');
+        header('Location: /bank_account/bank/bankPage');
     }
 }
 

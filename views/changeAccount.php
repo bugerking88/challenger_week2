@@ -20,7 +20,7 @@
 			    		<h3 class="panel-title">使用者切換</h3>
 			 			</div>
 			 			<div class="panel-body">
-			    		<form name="form" method="post" action="/bank_account/bank/bank_page">
+			    		<form name="form" method="post" action="/bank_account/bank/bankPage">
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">

@@ -14,7 +14,7 @@
 	</head>
 	<body>
 		 <ul>
-		  <li><a class="active" href="/bank_account/bank/bank_page">餘額和帳目明細</a></li>
+		  <li><a class="active" href="/bank_account/bank/bankPage">餘額和帳目明細</a></li>
 		  <li><a class="bg-danger" href="/bank_account/bank/changeAccount">更換使用者</a></li>
 		 </ul>
         	<div class="row centered-form">
