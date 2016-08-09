@@ -7,8 +7,8 @@ class BankAccount extends PdoConnect
     public function account() 
     {
         $sql = "SELECT * FROM `member_Table`";
-	    $accountShow = $this->connectGetdata($sql);
-	    return $accountShow;
+        $accountShow = $this->connectGetdata($sql);
+        return $accountShow;
     }
     
     //顯示全部的明細
@@ -16,7 +16,7 @@ class BankAccount extends PdoConnect
     {
         $sql = "SELECT * FROM `trans_detail`";
         $detail = $this->connectGetdata($sql);
-	    return $detail;
+        return $detail;
     }
     
     //計算轉帳金額
