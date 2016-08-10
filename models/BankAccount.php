@@ -1,12 +1,13 @@
 <?php
+
 require_once("PDOConnect.php");
 
 class BankAccount extends PDOConnect
 {
     //所有會員名稱餘額
-    public function account()
+    public function showAccount()
     {
-        $sql = "SELECT * FROM `member_Table`";
+        $sql = "SELECT * FROM `MemberTable`";
         $result = $this->db->prepare($sql);
         $result->execute();
         $accountShow = $result->fetchAll();
@@ -15,9 +16,9 @@ class BankAccount extends PDOConnect
     }
 
     //顯示全部的明細
-    public function detail()
+    public function showDetail()
     {
-        $sql = "SELECT * FROM `trans_detail`";
+        $sql = "SELECT * FROM `TransDetail`";
         $result = $this->db->prepare($sql);
         $result->execute();
         $detail = $result->fetchAll();
@@ -30,13 +31,13 @@ class BankAccount extends PDOConnect
     {
         //鎖住查詢
         $this->db->beginTransaction();
-        $sql = "SELECT * FROM `member_Table` WHERE id = 1 FOR UPDATE";
+        $sql = "SELECT * FROM `MemberTable` WHERE id = 1 FOR UPDATE";
         $result = $this->db->prepare($sql);
         $result->execute();
         $getBalance = $result->fetchAll();
 
         //更新餘額
-        $sql = "UPDATE `member_Table` SET `balance` = :balance WHERE id = 1";
+        $sql = "UPDATE `MemberTable` SET `balance` = :balance WHERE id = 1";
         $updateBalance = $this->db->prepare($sql);
         $total = $getBalance[0]['balance'] + $money;
         $updateBalance->bindParam(':balance', $total);
@@ -44,7 +45,7 @@ class BankAccount extends PDOConnect
 
         //存入明細Table
         $transTime = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO `trans_detail`(`id`, `trans_money`, `currentBalance`, `datetime`)";
+        $sql = "INSERT INTO `TransDetail`(`id`, `transMoney`, `currentBalance`, `dateTime`)";
         $sql .= "VALUES('1', :money, :total, :transTime)";
         $result = $this->db->prepare($sql);
         $result->bindParam(':money', $money);

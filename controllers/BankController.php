@@ -6,9 +6,9 @@ class BankController extends Controller
     public function bankPage()
     {
         $bank = $this->model("BankAccount");
-        $result1 = $bank->account();
-        $result2 = $this->showDetail();
-        $this->view("bankPage", array($result1, $result2));
+        $accountShow = $bank->showAccount();
+        $showDetail = $this->showDetail();
+        $this->view("bankPage", [$accountShow, $showDetail]);
     }
 
     //顯示轉帳頁面
@@ -27,7 +27,7 @@ class BankController extends Controller
     public function showDetail()
     {
         $detail = $this->model("BankAccount");
-        $result = $detail->detail();
+        $result = $detail->showDetail();
 
         return $result;
     }
@@ -39,8 +39,7 @@ class BankController extends Controller
         $money = $_POST['send'];
         $trans->trans($money);
 
-        header('Location: /bank_account/bank/bankPage');
+        header('Location: /bank_account/Bank/bankPage');
     }
-
 }
 
