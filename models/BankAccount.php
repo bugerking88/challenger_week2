@@ -53,7 +53,4 @@ class BankAccount extends PDOConnect
         $result->execute();
         $this->db->commit();
     }
-
 }
-
-
