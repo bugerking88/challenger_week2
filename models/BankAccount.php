@@ -29,29 +29,42 @@ class BankAccount extends PDOConnect
     //計算轉帳金額
     public function trans($money)
     {
+        try {
         //鎖住查詢
-        $this->db->beginTransaction();
-        $sql = "SELECT * FROM `MemberTable` WHERE id = 1 FOR UPDATE";
-        $result = $this->db->prepare($sql);
-        $result->execute();
-        $getBalance = $result->fetchAll();
+            $this->db->beginTransaction();
+            $sql = "SELECT * FROM `MemberTable` WHERE id = 1 LOCK IN SHARE MODE";
+            $result = $this->db->prepare($sql);
+            $result->execute();
+            $getBalance = $result->fetchAll();
 
-        //更新餘額
-        $sql = "UPDATE `MemberTable` SET `balance` = :balance WHERE id = 1";
-        $updateBalance = $this->db->prepare($sql);
-        $total = $getBalance[0]['balance'] + $money;
-        $updateBalance->bindParam(':balance', $total);
-        $updateBalance->execute();
+            $total = $getBalance[0]['balance'] + $money;
 
-        //存入明細Table
-        $transTime = date("Y-m-d H:i:s");
-        $sql = "INSERT INTO `TransDetail`(`id`, `transMoney`, `currentBalance`, `dateTime`)";
-        $sql .= "VALUES('1', :money, :total, :transTime)";
-        $result = $this->db->prepare($sql);
-        $result->bindParam(':money', $money);
-        $result->bindParam(':total', $total);
-        $result->bindParam(':transTime', $transTime);
-        $result->execute();
-        $this->db->commit();
+            if ($total >= 0) {
+            //更新餘額
+                $sql = "UPDATE `MemberTable` SET `balance` = :balance WHERE id = 1";
+                $updateBalance = $this->db->prepare($sql);
+                $updateBalance->bindParam(':balance', $total);
+                $updateBalance->execute();
+
+                //存入明細Table
+                $transTime = date("Y-m-d H:i:s");
+                $sql = "INSERT INTO `TransDetail`(`id`, `transMoney`, `currentBalance`, `dateTime`)";
+                $sql .= "VALUES('1', :money, :total, :transTime)";
+                $result = $this->db->prepare($sql);
+                $result->bindParam(':money', $money);
+                $result->bindParam(':total', $total);
+                $result->bindParam(':transTime', $transTime);
+                $result->execute();
+                $balanceMsg = "存款成功";
+            } else {
+                $balanceMsg = "餘額不足";
+            }
+            $this->db->commit();
+        }
+        catch (Exception $err) {
+            $this->db->rollBack();
+            $msg = $err->getMessage();
+        }
+        return $balanceMsg;
     }
 }

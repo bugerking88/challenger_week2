@@ -57,7 +57,7 @@
 				</tr>
 				<?php for($i=0;$i<count($data[1]);$i++) { ?>
 				<tr>
-					<?php $check=substr($data[1][$i]['trans_money'], 0, 1);?>
+					<?php $check=substr($data[1][$i]['transMoney'], 0, 1);?>
 					<th>
 						<?php if($check=="-") {
 						echo "轉出";
@@ -66,13 +66,13 @@
 						}?>
 					</th>
 					<th>
-						<?php echo $data[1][$i]['trans_money'];?>
+						<?php echo $data[1][$i]['transMoney'];?>
 					</th>
 					<th>
 						<?php echo $data[1][$i]['currentBalance'];?>
 					</th>
 					<th>
-						<?php echo $data[1][$i]['datetime'];?>
+						<?php echo $data[1][$i]['dateTime'];?>
 					</th>
 				</tr>
 				<?php } ?>

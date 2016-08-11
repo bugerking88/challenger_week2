@@ -37,9 +37,9 @@ class BankController extends Controller
     {
         $trans = $this->model("BankAccount");
         $money = $_POST['send'];
-        $trans->trans($money);
-
-        header('Location: /bank_account/Bank/bankPage');
+        $msg = $trans->trans($money);
+        $this->view("showErrorMsg", $msg);
+        header("refresh:0, url=https://lab-rain-wang.c9users.io/bank_account/Bank/bankPage");
     }
 }
 
