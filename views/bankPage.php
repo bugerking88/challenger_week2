@@ -1,5 +1,4 @@
 <html>
-
 <head>
 	<meta charset="utf-8">
 	<link href="/book_active/css/form.css" rel="stylesheet">
@@ -55,11 +54,11 @@
 					<th>目前餘額</th>
 					<th>轉帳時間</th>
 				</tr>
-				<?php for($i=0;$i<count($data[1]);$i++) { ?>
+				<?php for ($i=0;$i<count($data[1]);$i++) { ?>
 				<tr>
 					<?php $check=substr($data[1][$i]['transMoney'], 0, 1);?>
 					<th>
-						<?php if($check=="-") {
+						<?php if ($check=="-") {
 						echo "轉出";
 						} else {
 						echo "轉入";

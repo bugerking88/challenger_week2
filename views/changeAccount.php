@@ -11,7 +11,6 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
-
 <body>
 	<div class="row centered-form">
 		<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -26,8 +25,8 @@
 								<div class="form-group">
 									<lable>使用者</lable>
 									<select name="part_count" id="part_count">
-										<option value="Taipei">台北</option>
-										<option value="Taoyuan">桃園</option>
+										<option value="UserA">UserA</option>
+										<option value="UserB">UserB</option>
 									</select>
 								</div>
 							</div>
@@ -39,5 +38,4 @@
 		</div>
 	</div>
 </body>
-
 </html>
